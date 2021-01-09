@@ -1,7 +1,7 @@
 library(tidyverse)
 library(fastDummies)
 library(lubridate)
-setwd("~/Mis Cursos/Curso EANT/Proyecto Final - EANT - Data Science")
+
 #Descargo el dataset 2018 y 2019####
 df <-  read.csv('http://cdn.buenosaires.gob.ar/datosabiertos/datasets/mapa-del-delito/delitos_2018.csv',header = T,sep = ',')
 df_2018 <-df %>% 
@@ -59,10 +59,6 @@ for (i in c(1:dim(df_2018)[1])) {
 }
 df_2018$tren <- a
 
-write.csv(x = df_2018,"df_2018.csv",sep = ",",dec = ",")
-
-
-
 # Le sumo la variable de tren al dataset de 2019#####
 
 a <- c()
@@ -76,4 +72,7 @@ for (i in c(1:dim(df_2019)[1])) {
 }
 df_2019$tren <- a
 
+write.csv(x = df_2018,"df_2018.csv",sep = ",",dec = ",")
 write.csv(x = df_2018,"df_2019.csv",sep = ",",dec = ",")
+
+#Estos files son los que estan subidos a este repositorio
